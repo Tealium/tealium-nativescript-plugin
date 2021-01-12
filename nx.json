@@ -1,5 +1,5 @@
 {
-	"npmScope": "tealium-nativescript",
+	"npmScope": "tealium",
 	"affected": {
 		"defaultBase": "master"
 	},
@@ -20,7 +20,7 @@
 		"all": {
 			"tags": []
 		},
-		"tealium": {
+		"nativescript-plugin": {
 			"tags": []
 		}
 	},

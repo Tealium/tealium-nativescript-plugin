@@ -39,17 +39,17 @@ module.exports = {
 			},
 		},
 		'⚙️': {
-			script: `npx cowsay "@tealium-nativescript/* packages will keep your ⚙️ cranking"`,
-			description: '_____________  @tealium-nativescript/*  _____________',
+			script: `npx cowsay "@tealium/* packages will keep your ⚙️ cranking"`,
+			description: '_____________  @tealium/*  _____________',
 		},
 		// packages
 		// build output is always in dist/packages
-		'@tealium-nativescript': {
-			// @tealium-nativescript/tealium
-			tealium: {
+		'@tealium': {
+			// @tealium/nativescript-plugin
+			'nativescript-plugin': {
 				build: {
-					script: 'nx run tealium:build.all',
-					description: '@tealium-nativescript/tealium: Build',
+					script: 'nx run nativescript-plugin:build.all',
+					description: '@tealium/nativescript-plugin: Build',
 				},
 			},
 			'build-all': {
@@ -62,9 +62,9 @@ module.exports = {
 			description: '_____________  Focus (VS Code supported)  _____________',
 		},
 		focus: {
-			tealium: {
-				script: 'nx run tealium:focus',
-				description: 'Focus on @tealium-nativescript/tealium',
+			'nativescript-plugin': {
+				script: 'nx run nativescript-plugin:focus',
+				description: 'Focus on @tealium/nativescript-plugin',
 			},
 			reset: {
 				script: 'nx run all:focus',

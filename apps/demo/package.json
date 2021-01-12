@@ -6,7 +6,7 @@
 	"dependencies": {
 		"nativescript-theme-core": "file:../../node_modules/nativescript-theme-core",
 		"@nativescript/core": "file:../../node_modules/@nativescript/core",
-		"@tealium-nativescript/tealium": "file:../../packages/tealium"
+		"@tealium/nativescript-plugin": "file:../../packages/nativescript-plugin"
 	},
 	"devDependencies": {
 		"@nativescript/android": "7.0.1",

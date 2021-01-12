@@ -1,7 +1,7 @@
-# @tealium-nativescript/tealium
+# @tealium/nativescript-plugin
 
 ```javascript
-ns plugin add @tealium-nativescript/tealium
+ns plugin add @tealium/nativescript-plugin
 ```
 
 ## Usage

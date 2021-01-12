@@ -1,6 +1,6 @@
 import { DemoSharedBase } from '../utils';
-import { Tealium } from '@tealium-nativescript/tealium';
-import { TealiumConfig, TealiumView, TealiumEvent, ConsentCategories, Dispatchers, Collectors, ConsentPolicy, Expiry, ConsentStatus, TealiumEnvironment } from '@tealium-nativescript/tealium/common';
+import { Tealium } from '@tealium/nativescript-plugin';
+import { TealiumConfig, TealiumView, TealiumEvent, ConsentCategories, Dispatchers, Collectors, ConsentPolicy, Expiry, ConsentStatus, TealiumEnvironment } from '@tealium/nativescript-plugin/common';
 
 export class DemoSharedTealium extends DemoSharedBase {
 	init() {
