@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'TealiumWrapper' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for NativeScript-Swift-Wrapper
+  pod 'tealium-swift/Core'
+  pod 'tealium-swift/Lifecycle'
+  pod 'tealium-swift/Collect'
+  pod 'tealium-swift/TagManagement'
+  pod 'tealium-swift/RemoteCommands'
+  pod 'tealium-swift/VisitorService'
+end

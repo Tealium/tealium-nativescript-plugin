@@ -1,0 +1,40 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page" id="mainPage">
+    <Page.actionBar>
+        <ActionBar title="tealium" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout class="p-20">
+        <ScrollView class="h-full">
+          <StackLayout>
+            <Label row="1" text="Initialize" textWrap="true" />
+            <Label row="1" text="" textWrap="true" />
+            <Button text="Initialize SDK" tap="{{ init }}" class="btn btn-primary"/>
+            <Button text="Terminate SDK Instance" tap="{{ terminate }}" class="btn btn-primary"/>
+            <Label row="1" text="" textWrap="true" />
+            <Label row="1" text="Consent" textWrap="true" />
+            <Button text="Consent - Opt In" tap="{{ optIn }}" class="btn btn-primary"/>
+            <Button text="Consent - Opt Out" tap="{{ optOut }}" class="btn btn-primary"/>
+            <Button text="Consent - Set Random Categories" tap="{{ setRandomConsentCategories }}" class="btn btn-primary"/>
+            <Button text="Consent - Get Status" tap="{{ getConsentStatus }}" class="btn btn-primary"/>
+            <Button text="Consent - Get Categories" tap="{{ getConsentCategories }}" class="btn btn-primary"/>
+            <Label row="1" text="" textWrap="true" />
+            <Label row="1" text="Track" textWrap="true" />
+            <Button text="Track Event" tap="{{ trackEvent }}" class="btn btn-primary"/>
+            <Button text="Track View" tap="{{ trackView }}" class="btn btn-primary"/>
+            <Button text="Add Data" tap="{{ addData }}" class="btn btn-primary"/>
+            <Button text="Remove Data" tap="{{ removeData }}" class="btn btn-primary"/>
+            <Button text="Get Data" tap="{{ getData }}" class="btn btn-primary"/>
+            <Label row="1" text="" textWrap="true" />
+            <Label row="1" text="Remote Commands" textWrap="true" />
+            <Button text="Add Remote Command" tap="{{ addRemoteCommand }}" class="btn btn-primary"/>
+            <Button text="Remove Remote Command" tap="{{ removeRemoteCommand }}" class="btn btn-primary"/>
+            <Label row="1" text="Visitor Service" textWrap="true" />
+            <Button text="Set Visitor Service Listener" tap="{{ setVisitorServiceListener }}" class="btn btn-primary"/>
+            <Button text="Remove Visitor Service Listener" tap="{{ removeVisitorServiceListener }}" class="btn btn-primary"/>
+            <Label row="1" text="Trace" textWrap="true" />
+            <TextField id="traceId" hint="Enter Trace ID" returnPress="{{ joinTrace }}" returnKeyType="done"/>
+            <Button text="Leave Trace" tap="{{ joinTrace }}" class="btn btn-primary"/>
+          </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</Page>
