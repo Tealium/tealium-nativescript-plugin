@@ -1,0 +1,105 @@
+{
+	"version": 1,
+	"projects": {
+		"demo": {
+			"root": "apps/demo/",
+			"sourceRoot": "apps/demo/src",
+			"projectType": "application",
+			"prefix": "demo",
+			"architect": {
+				"ios": {
+					"builder": "@nrwl/workspace:run-commands",
+					"options": {
+						"commands": ["ns debug ios --no-hmr --emulator --env.testing"],
+						"cwd": "apps/demo",
+						"parallel": false
+					}
+				},
+				"android": {
+					"builder": "@nrwl/workspace:run-commands",
+					"options": {
+						"commands": ["ns debug android --no-hmr --emulator --env.testing"],
+						"cwd": "apps/demo",
+						"parallel": false
+					}
+				},
+				"clean": {
+					"builder": "@nrwl/workspace:run-commands",
+					"options": {
+						"commands": ["ns clean", "npm i"],
+						"cwd": "apps/demo",
+						"parallel": false
+					}
+				}
+			}
+		},
+		"all": {
+			"root": "packages/",
+			"projectType": "library",
+			"architect": {
+				"build": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx run nativescript-plugin:build.all"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages"],
+						"parallel": false
+					}
+				}
+			}
+		},
+		"nativescript-plugin": {
+			"root": "packages/nativescript-plugin",
+			"sourceRoot": "packages/nativescript-plugin",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:package",
+					"options": {
+						"outputPath": "dist/packages/nativescript-plugin",
+						"tsConfig": "packages/nativescript-plugin/tsconfig.json",
+						"packageJson": "packages/nativescript-plugin/package.json",
+						"main": "packages/nativescript-plugin/index.ts",
+						"assets": [
+							"packages/nativescript-plugin/*.md",
+							"packages/nativescript-plugin/index.d.ts",
+							"LICENSE",
+							{
+								"glob": "**/*",
+								"input": "packages/nativescript-plugin/platforms/",
+								"output": "./platforms/"
+							}
+						]
+					}
+				},
+				"build.all": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx run nativescript-plugin:build", "node tools/scripts/build-finish.ts nativescript-plugin"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-plugin"],
+						"parallel": false
+					}
+				}
+			}
+		}
+	},
+	"cli": {
+		"defaultCollection": "@nrwl/workspace"
+	}
+}
