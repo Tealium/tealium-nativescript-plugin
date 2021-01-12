@@ -22,8 +22,8 @@
 		"Android"
 	],
 	"author": {
-		"name": "NativeScript",
-		"email": "oss@nativescript.org"
+		"name": "tealium",
+		"email": "dev@tealium.com"
 	},
 	"bugs": {
 		"url": "https://github.com/tealium/tealium-nativescript-plugin/issues"
