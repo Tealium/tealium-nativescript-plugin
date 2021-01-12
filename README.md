@@ -1,11 +1,11 @@
-# @tealium-nativescript/\* plugins
+# @tealium/\* plugins
 
 ```
 npm run setup
 npm start
 ```
 
-- @tealium-nativescript/tealium
+- @tealium/nativescript-plugin
 
 # How to use?
 

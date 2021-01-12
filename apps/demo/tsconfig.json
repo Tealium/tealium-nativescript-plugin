@@ -13,7 +13,7 @@
       "@demo/shared": [
         "../../tools/demo/index.ts"
       ],
-      "@tealium-nativescript/*": [
+      "@tealium/*": [
         "../../packages/*"
       ]
     }
