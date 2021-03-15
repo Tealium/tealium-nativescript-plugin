@@ -14,23 +14,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TCQBQER3dAEUqVDi6XhePJpunb4=
+		ID8f8vu9JD1vQMZyT2frfKEhz5E=
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		D86Get4kTh9OnfKMF8bszeRPgMc=
+		nuc2jUulm7whPZS6p86U7clZeYk=
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		D86Get4kTh9OnfKMF8bszeRPgMc=
+		nuc2jUulm7whPZS6p86U7clZeYk=
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		6NXqBai9buRcOEKGVDYf9lfPz/g=
+		ULCB0syZ7eqVySBBwstqFQNPJew=
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		6NXqBai9buRcOEKGVDYf9lfPz/g=
+		ULCB0syZ7eqVySBBwstqFQNPJew=
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		fGMeyONxXpA6u+3sO+LsEy+aJGY=
+		uz7ck/24IflB/MzW6+NDSbfRxQk=
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		fGMeyONxXpA6u+3sO+LsEy+aJGY=
+		uz7ck/24IflB/MzW6+NDSbfRxQk=
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		PEQHBgXhs7gjQylf7N6PP9a04zc=
+		tXnqWYsenqdh1ozKiQJ4Wy8ElWM=
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/TealiumWrapper.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		PEQHBgXhs7gjQylf7N6PP9a04zc=
+		tXnqWYsenqdh1ozKiQJ4Wy8ElWM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -89,28 +89,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IHtUgdGKXoe41IA8wAIYXEln3MkMXykXYO0R4erLXFg=
+			BgdisvA/GlUvA5T82KE+leC82zUBnoFKP5H32G4kzkY=
 			</data>
 		</dict>
 		<key>Modules/TealiumWrapper.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IHtUgdGKXoe41IA8wAIYXEln3MkMXykXYO0R4erLXFg=
+			BgdisvA/GlUvA5T82KE+leC82zUBnoFKP5H32G4kzkY=
 			</data>
 		</dict>
 		<key>Modules/TealiumWrapper.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qaOrWgQvIdUMPConBCUIvOHaFccYZS/drdDsr71GGdE=
+			mukWxjtCZLoRRREdZZ0JQCOqEVt0hXsztI1AQMJhdec=
 			</data>
 		</dict>
 		<key>Modules/TealiumWrapper.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qaOrWgQvIdUMPConBCUIvOHaFccYZS/drdDsr71GGdE=
+			mukWxjtCZLoRRREdZZ0JQCOqEVt0hXsztI1AQMJhdec=
 			</data>
 		</dict>
 		<key>Modules/TealiumWrapper.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -124,7 +124,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0CxK463qcjoMDL1zMa9anG7yE+lecFsEH/4yapnnSUs=
+			dRyYimbPO3HgYIBN+94gW9s+MulkP1cJMAw6HAakCoM=
 			</data>
 		</dict>
 		<key>Modules/TealiumWrapper.swiftmodule/arm64.swiftdoc</key>
@@ -138,7 +138,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0CxK463qcjoMDL1zMa9anG7yE+lecFsEH/4yapnnSUs=
+			dRyYimbPO3HgYIBN+94gW9s+MulkP1cJMAw6HAakCoM=
 			</data>
 		</dict>
 		<key>Modules/TealiumWrapper.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -152,7 +152,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0DPvMyfTAEBv6DBG9BGb/xDek/nLMWQWTPJwufqCNiA=
+			F5bZW+snHe+RVbVX84BTFegp0I2HNDdjdKCgsZ8PqJE=
 			</data>
 		</dict>
 		<key>Modules/TealiumWrapper.swiftmodule/x86_64.swiftdoc</key>
@@ -166,7 +166,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0DPvMyfTAEBv6DBG9BGb/xDek/nLMWQWTPJwufqCNiA=
+			F5bZW+snHe+RVbVX84BTFegp0I2HNDdjdKCgsZ8PqJE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

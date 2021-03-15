@@ -1,6 +1,7 @@
 import { DemoSharedBase } from '../utils';
+// import {} from '@tealium/nativescript-plugin';
 import { Tealium } from '@tealium/nativescript-plugin';
-import { TealiumConfig, TealiumView, TealiumEvent, ConsentCategories, Dispatchers, Collectors, ConsentPolicy, Expiry, ConsentStatus, TealiumEnvironment } from '@tealium/nativescript-plugin/common';
+import { TealiumConfig, TealiumView, TealiumEvent, ConsentCategories, Dispatchers, Collectors, ConsentPolicy, Expiry, ConsentStatus, ConsentExpiry, TealiumEnvironment } from '@tealium/nativescript-plugin/common';
 
 export class DemoSharedTealium extends DemoSharedBase {
 	init() {
@@ -14,6 +15,7 @@ export class DemoSharedTealium extends DemoSharedBase {
 			consentPolicy: ConsentPolicy.gdpr,
 			visitorServiceEnabled: true,
 			// visitorServiceRefreshInterval: '1',
+			consentExpiry: new ConsentExpiry(3, 'minutes'),
 		};
 		console.log(config.collectors);
 		console.log(config.dispatchers);
@@ -51,7 +53,7 @@ export class DemoSharedTealium extends DemoSharedBase {
 	}
 
 	removeVisitorServiceListener() {
-		// Tealium.removeVisitorServiceListener();
+		Tealium.removeVisitorServiceListener();
 	}
 
 	trackView() {

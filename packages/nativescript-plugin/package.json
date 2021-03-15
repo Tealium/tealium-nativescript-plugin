@@ -1,48 +1,35 @@
 {
-	"name": "plugins",
-	"version": "0.0.0",
-	"license": "MIT",
-	"scripts": {
-		"setup": "npx rimraf node_modules package-lock.json dist tmp && npm i && ts-patch install",
-		"start": "nps",
-		"add": "nx g @nativescript/plugin-tools:add-package",
-		"add-angular": "nx g @nativescript/plugin-tools:add-angular",
-		"config": "nx g @nativescript/plugin-tools:config",
-		"publish-packages": "nx g @nativescript/plugin-tools:publish"
-	},
-	"private": true,
-	"devDependencies": {
-		"@angular/animations": "~10.1.0",
-		"@angular/common": "~10.1.0",
-		"@angular/compiler": "~10.1.0",
-		"@angular/compiler-cli": "~10.1.0",
-		"@angular/core": "~10.1.0",
-		"@angular/forms": "~10.1.0",
-		"@angular/platform-browser": "~10.1.0",
-		"@angular/platform-browser-dynamic": "~10.1.0",
-		"@angular/router": "~10.1.0",
-		"@nativescript/angular": "~10.1.0",
-		"@nativescript/core": "~7.0.0",
-		"@nativescript/ios": "7.0.6",
-		"@nativescript/plugin-tools": "~1.0.0",
-		"@nativescript/types": "~7.0.0",
-		"@nativescript/webpack": "~3.0.0",
-		"@ngtools/webpack": "~10.1.0",
-		"nativescript-vue": "~2.8.0",
-		"nativescript-vue-template-compiler": "~2.8.0",
-		"ng-packagr": "~10.1.0",
-		"rxjs": "~6.6.0",
-		"typescript": "~4.0.0",
-		"zone.js": "~0.10.3"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
+	"name": "@tealium/nativescript-plugin",
+	"version": "1.0.0",
+	"description": "Add a plugin description",
+	"main": "index",
+	"typings": "index.d.ts",
+	"nativescript": {
+		"platforms": {
+			"ios": "6.0.0",
+			"android": "6.0.0"
 		}
 	},
-	"lint-staged": {
-		"**/*": [
-			"nx format:write --files"
-		]
-	}
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/NativeScript/plugins.git"
+	},
+	"keywords": [
+		"NativeScript",
+		"JavaScript",
+		"TypeScript",
+		"iOS",
+		"Android"
+	],
+	"author": {
+		"name": "NativeScript",
+		"email": "oss@nativescript.org"
+	},
+	"bugs": {
+		"url": "https://github.com/NativeScript/plugins/issues"
+	},
+	"license": "Apache-2.0",
+	"homepage": "https://github.com/NativeScript/plugins",
+	"readmeFilename": "README.md",
+	"bootstrapper": "@nativescript/plugin-seed"
 }

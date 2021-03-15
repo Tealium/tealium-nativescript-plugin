@@ -69,6 +69,10 @@ export class TealiumEvent implements TealiumDispatch {
 	}
 }
 
+export class ConsentExpiry {
+	constructor(public time: number, public unit: string) {}
+}
+
 export enum ConsentStatus {
 	consented = 'consented',
 	notConsented = 'notConsented',
@@ -125,6 +129,7 @@ export interface TealiumConfig {
 	loglevel?: LogLevel;
 	consentLoggingEnabled?: boolean;
 	consentPolicy?: ConsentPolicy;
+	consentExpiry?: ConsentExpiry;
 	lifecycleAutotrackingEnabled?: boolean;
 	useRemoteLibrarySettings?: boolean;
 	visitorServiceEnabled?: boolean;

@@ -1,6 +1,6 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page" id="mainPage">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
     <Page.actionBar>
-        <ActionBar title="tealium" icon="" class="action-bar">
+        <ActionBar title="Tealium" icon="" class="action-bar">
         </ActionBar>
     </Page.actionBar>
     <StackLayout class="p-20">
