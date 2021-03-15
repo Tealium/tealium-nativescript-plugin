@@ -13,5 +13,5 @@ dependencies {
     implementation "com.tealium:kotlin-remotecommand-dispatcher:1.0.3"
     implementation "com.tealium:kotlin-visitor-service:1.0.3"
     implementation "com.tealium:kotlin-lifecycle:1.0.3"
-    implementation "com.tealium:kotlin-core:1.2.1"
+    implementation "com.tealium:kotlin-core:1.2.2"
 }

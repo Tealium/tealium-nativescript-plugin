@@ -53,7 +53,7 @@ export class DemoSharedTealium extends DemoSharedBase {
 	}
 
 	removeVisitorServiceListener() {
-		Tealium.removeVisitorServiceListener();
+		// Tealium.removeVisitorServiceListener();
 	}
 
 	trackView() {
