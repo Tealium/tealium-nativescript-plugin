@@ -1,6 +1,6 @@
 {
 	"name": "@tealium/nativescript-plugin",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Tealium for NativeScript",
 	"main": "index",
 	"typings": "index.d.ts",
