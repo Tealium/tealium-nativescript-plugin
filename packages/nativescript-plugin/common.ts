@@ -70,7 +70,14 @@ export class TealiumEvent implements TealiumDispatch {
 }
 
 export class ConsentExpiry {
-	constructor(public time: number, public unit: string) {}
+	constructor(public time: number, public unit: TimeUnit) {}
+}
+
+export enum TimeUnit {
+	minutes = 'minutes',
+	hours = 'hours',
+	days = 'days',
+	months = 'months',
 }
 
 export enum ConsentStatus {
