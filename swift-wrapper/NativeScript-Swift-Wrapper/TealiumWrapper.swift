@@ -134,6 +134,24 @@ import TealiumSwift
             localConfig.visitorServiceDelegate = visitorServiceDelegate
         }
         
+        if let consentExpiry = config["consentExpiry"] as? [String:Any],
+           let time = consentExpiry["time"] as? Int,
+           let unit = consentExpiry["unit"] as? String {
+            var unitType = TimeUnit.days
+            
+            switch unit.lowercased() {
+            case "minutes":
+                unitType = .minutes
+            case "hours":
+                unitType = .hours
+            case "months":
+                unitType = .months
+            default:
+                break
+            }
+            localConfig.consentExpiry = (time: time, unit: unitType)
+        }
+        
         localConfig.memoryReportingEnabled = config["memoryReportingEnabled"] as? Bool ?? true
         
         localConfig.collectors = configCollectors

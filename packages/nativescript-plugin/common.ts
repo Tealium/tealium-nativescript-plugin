@@ -10,7 +10,7 @@ export enum Collectors {
 export class Constants {
 	static pluginDetails = new Map([
 		['plugin_name', 'Tealium-NativeScript'],
-		['plugin_version', '1.0.0'],
+		['plugin_version', '1.1.0'],
 	]);
 }
 
@@ -69,6 +69,10 @@ export class TealiumEvent implements TealiumDispatch {
 	}
 }
 
+export class ConsentExpiry {
+	constructor(public time: number, public unit: string) {}
+}
+
 export enum ConsentStatus {
 	consented = 'consented',
 	notConsented = 'notConsented',
@@ -125,6 +129,7 @@ export interface TealiumConfig {
 	loglevel?: LogLevel;
 	consentLoggingEnabled?: boolean;
 	consentPolicy?: ConsentPolicy;
+	consentExpiry?: ConsentExpiry;
 	lifecycleAutotrackingEnabled?: boolean;
 	useRemoteLibrarySettings?: boolean;
 	visitorServiceEnabled?: boolean;
