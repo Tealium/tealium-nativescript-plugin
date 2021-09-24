@@ -6,6 +6,10 @@ import com.tealium.collectdispatcher.overrideCollectBatchUrl
 import com.tealium.collectdispatcher.overrideCollectDomain
 import com.tealium.collectdispatcher.overrideCollectUrl
 import com.tealium.core.*
+import com.tealium.core.collection.App
+import com.tealium.core.collection.Connectivity
+import com.tealium.core.collection.Device
+import com.tealium.core.collection.Time
 import com.tealium.core.consent.*
 import com.tealium.core.persistence.Expiry
 import com.tealium.dispatcher.Dispatch
@@ -77,6 +81,9 @@ class TealiumWrapper {
             val profile = configurations[PROFILE] as String
             val environment = configurations[ENVIRONMENT] as String
 
+            val collectorsSet = getCollectorsSet(configurations[COLLECTORS] as? JSONArray).apply {
+                add(Collectors.Time)
+            }
             val modulesSet = getModulesSet(configurations[COLLECTORS] as? JSONArray)
             if (configurations[ENABLE_VISITOR_SERVICE] == true) {
                 modulesSet.add(Modules.VisitorService)
@@ -97,16 +104,13 @@ class TealiumWrapper {
                 profile,
                 env,
                 dataSourceId = configurations["dataSource"] as? String,
+                collectors = collectorsSet,
                 modules = modulesSet,
                 dispatchers = dispatchersSet
             )
 
             checkAndApplyOptions(tealiumConfig, configurations)
-            tealium = Tealium.create(instanceName, tealiumConfig) {
-                configurations[CUSTOM_VISITOR_ID]?.let {
-                    dataLayer.putString("tealium_visitor_id", it.toString())
-                }
-            }
+            tealium = Tealium.create(instanceName, tealiumConfig) { }
         }
 
         fun terminateInstance() {
@@ -118,6 +122,7 @@ class TealiumWrapper {
             val exp = when (expiry.toLowerCase(Locale.ROOT)) {
                 "forever" -> Expiry.FOREVER
                 "session" -> Expiry.SESSION
+                "untilrestart" -> Expiry.UNTIL_RESTART
                 else -> Expiry.SESSION
             }
 
@@ -359,8 +364,28 @@ class TealiumWrapper {
                             }
                         }
                     }
+                    CUSTOM_VISITOR_ID -> {
+                        (value as? String)?.let {
+                            config.existingVisitorId = it
+                        }
+                    }
                 }
             }
+        }
+
+        private fun getCollectorsSet(collectors: JSONArray?): MutableSet<CollectorFactory> {
+            val collectorsSet = mutableSetOf<CollectorFactory>()
+            collectors?.let {
+                for (i in 0 until it.length()) {
+                    when ((it[i] as String).toLowerCase(Locale.ROOT)) {
+                        "devicedata" -> collectorsSet.add(Collectors.Device)
+                        "connectivity" -> collectorsSet.add(Collectors.Connectivity)
+                        "appdata" -> collectorsSet.add(Collectors.App)
+                    }
+                }
+            }
+
+            return collectorsSet
         }
 
         private fun getModulesSet(modules: JSONArray?): MutableSet<ModuleFactory> {
