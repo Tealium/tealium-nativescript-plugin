@@ -15,6 +15,7 @@ export class DemoSharedTealium extends DemoSharedBase {
 			visitorServiceEnabled: true,
 			// visitorServiceRefreshInterval: '1',
 			consentExpiry: new ConsentExpiry(3, TimeUnit.minutes),
+			useRemoteLibrarySettings: false,
 		};
 		console.log(config.collectors);
 		console.log(config.dispatchers);

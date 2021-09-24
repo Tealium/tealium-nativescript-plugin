@@ -1,6 +1,1 @@
-pod 'tealium-swift/Core'
-pod 'tealium-swift/Lifecycle'
-pod 'tealium-swift/Collect'
-pod 'tealium-swift/TagManagement'
-pod 'tealium-swift/RemoteCommands'
-pod 'tealium-swift/VisitorService'
+pod 'TealiumNativescriptWrapper', :path => '../../node_modules/@tealium/nativescript-plugin/platforms/ios/TealiumNativescriptWrapper/'
