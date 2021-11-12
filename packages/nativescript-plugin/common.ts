@@ -10,7 +10,7 @@ export enum Collectors {
 export class Constants {
 	static pluginDetails = new Map([
 		['plugin_name', 'Tealium-NativeScript'],
-		['plugin_version', '1.1.2'],
+		['plugin_version', '1.1.3'],
 	]);
 }
 
