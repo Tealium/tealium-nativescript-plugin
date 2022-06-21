@@ -11,6 +11,7 @@ declare class TealiumWrapper extends NSObject {
 	static addToDataLayerWithDataExpiry(data: Map<string, any>, expiry: Expiry): void;
 	static removeFromDataLayerWithKeys(keys: string[]): void;
 	static getDataFromDataLayerWithKey(key: string): any;
+	static gatherTrackData(callback: (result: Map<string, any>) => void): void;
 	static addRemoteCommandWithId(id: string, callback: (response: string) => void): void;
 	static removeRemoteCommandWithId(id: string): void;
 	static setVisitorServiceListener(callback: (response: Map<string, any>) => void): void;
@@ -94,6 +95,10 @@ export class Tealium extends TealiumCommon {
 
 	public static getData(key: string): any {
 		return TealiumWrapper.getDataFromDataLayerWithKey(key);
+	}
+
+	public static gatherTrackData(callback: (result: any) => void) {
+		return TealiumWrapper.gatherTrackData(callback);
 	}
 
 	public static track(dispatch: TealiumDispatch) {

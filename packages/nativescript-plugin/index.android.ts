@@ -104,6 +104,10 @@ export class Tealium extends TealiumCommon {
 		return TealiumWrapper.fetchData(key);
 	}
 
+	public static gatherTrackData(): any {
+		return TealiumWrapper.gatherTrackData();
+	}
+
 	public static track(dispatch: TealiumDispatch) {
 		TealiumWrapper.track(dispatch.toJson());
 	}

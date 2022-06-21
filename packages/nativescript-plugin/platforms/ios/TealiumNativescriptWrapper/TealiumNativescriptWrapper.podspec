@@ -24,10 +24,10 @@ ObjC-compatible wrapper for the Tealium Swift library to be used with the Tealiu
 
   s.source_files = 'TealiumNativescriptWrapper/Classes/**/*'
 
-  s.dependency  'tealium-swift/Core', "~> 2.4"
-  s.dependency 'tealium-swift/Lifecycle', "~> 2.4"
-  s.dependency 'tealium-swift/Collect', "~> 2.4"
-  s.dependency 'tealium-swift/TagManagement', "~> 2.4"
-  s.dependency 'tealium-swift/RemoteCommands', "~> 2.4"
-  s.dependency 'tealium-swift/VisitorService', "~> 2.4"
+  s.dependency  'tealium-swift/Core', "~> 2.6.4"
+  s.dependency 'tealium-swift/Lifecycle', "~> 2.6.4"
+  s.dependency 'tealium-swift/Collect', "~> 2.6.4"
+  s.dependency 'tealium-swift/TagManagement', "~> 2.6.4"
+  s.dependency 'tealium-swift/RemoteCommands', "~> 2.6.4"
+  s.dependency 'tealium-swift/VisitorService', "~> 2.6.4"
 end

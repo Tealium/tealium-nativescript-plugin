@@ -10,7 +10,7 @@ export enum Collectors {
 export class Constants {
 	static pluginDetails = new Map([
 		['plugin_name', 'Tealium-NativeScript'],
-		['plugin_version', '1.1.3'],
+		['plugin_version', '1.1.4'],
 	]);
 }
 
@@ -129,6 +129,7 @@ export interface TealiumConfig {
 	overrideCollectURL?: string;
 	overrideCollectBatchURL?: string;
 	overrideCollectDomain?: string;
+	overrideCollectProfile?: string;
 	overrideLibrarySettingsURL?: string;
 	overrideTagManagementURL?: string;
 	deepLinkTrackingEnabled?: boolean;
@@ -141,6 +142,7 @@ export interface TealiumConfig {
 	useRemoteLibrarySettings?: boolean;
 	visitorServiceEnabled?: boolean;
 	visitorServiceRefreshInterval?: string;
+	sessionCountingEnabled?: string;
 }
 
 export class TealiumCommon extends Observable {}

@@ -24,6 +24,7 @@
             <Button text="Add Data" tap="{{ addData }}" class="btn btn-primary"/>
             <Button text="Remove Data" tap="{{ removeData }}" class="btn btn-primary"/>
             <Button text="Get Data" tap="{{ getData }}" class="btn btn-primary"/>
+            <Button text="Get Track Data" tap="{{ gatherTrackData }}" class="btn btn-primary"/>
             <Label row="1" text="" textWrap="true" />
             <Label row="1" text="Remote Commands" textWrap="true" />
             <Button text="Add Remote Command" tap="{{ addRemoteCommand }}" class="btn btn-primary"/>

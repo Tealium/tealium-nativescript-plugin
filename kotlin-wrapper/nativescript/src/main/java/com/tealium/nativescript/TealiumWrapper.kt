@@ -1,10 +1,7 @@
 package com.tealium.nativescript
 
 import android.app.Application
-import com.tealium.collectdispatcher.Collect
-import com.tealium.collectdispatcher.overrideCollectBatchUrl
-import com.tealium.collectdispatcher.overrideCollectDomain
-import com.tealium.collectdispatcher.overrideCollectUrl
+import com.tealium.collectdispatcher.*
 import com.tealium.core.*
 import com.tealium.core.collection.App
 import com.tealium.core.collection.Connectivity
@@ -22,6 +19,7 @@ import com.tealium.remotecommanddispatcher.remoteCommands
 import com.tealium.remotecommands.RemoteCommand
 import com.tealium.tagmanagementdispatcher.TagManagement
 import com.tealium.tagmanagementdispatcher.overrideTagManagementUrl
+import com.tealium.tagmanagementdispatcher.sessionCountingEnabled
 import com.tealium.visitorservice.*
 import org.json.JSONArray
 import org.json.JSONObject
@@ -170,6 +168,10 @@ class TealiumWrapper {
             return tealium?.dataLayer?.all()?.get(key)
         }
 
+        fun gatherTrackData(): Any? {
+            return tealium?.gatherTrackData()
+        }
+
         fun track(dispatch: String) {
             val payload = JsonUtils.mapFor(JSONObject(dispatch))
             val dataLayerString = payload["dataLayer"]?.toString()
@@ -204,7 +206,7 @@ class TealiumWrapper {
                     response?.requestPayload?.let {
                         val responseData = mapOf(
                             "payload" to it,
-                            "status" to response?.status
+                            "status" to response.status
                         )
                         remoteCommandCallback.remoteCommandCallback(responseData)
                     }
@@ -325,6 +327,7 @@ class TealiumWrapper {
                     "overrideCollectURL" -> config.overrideCollectUrl = value.toString()
                     "overrideCollectBatchURL" -> config.overrideCollectBatchUrl = value.toString()
                     "overrideCollectDomain" -> config.overrideCollectDomain = value.toString()
+                    "overrideCollectProfile" -> config.overrideCollectProfile = value.toString()
                     "overrideLibrarySettingsURL" -> config.overrideLibrarySettingsUrl =
                         value.toString()
                     "overrideTagManagementURL" -> config.overrideTagManagementUrl = value.toString()
@@ -340,6 +343,8 @@ class TealiumWrapper {
                     "visitorServiceRefreshInterval" -> value.toString().toLongOrNull()?.let {
                         config.visitorServiceRefreshInterval = TimeUnit.MINUTES.toSeconds(it)
                     }
+                    "sessionCountingEnabled" -> config.sessionCountingEnabled =
+                        value.toString().toBoolean()
                     "consentPolicy" -> {
                         when (value.toString()) {
                             "ccpa" -> {
@@ -360,7 +365,8 @@ class TealiumWrapper {
                         val map = JsonUtils.mapFor(JSONObject(value.toString()))
                         map["time"]?.let { time ->
                             map["unit"]?.let { unit ->
-                                config.consentExpiry = getConsentExpiry(time.toString().toLong(), unit as String)
+                                config.consentExpiry =
+                                    getConsentExpiry(time.toString().toLong(), unit as String)
                             }
                         }
                     }
@@ -424,12 +430,14 @@ class TealiumWrapper {
                 val today = cal.timeInMillis
                 cal.add(Calendar.MONTH, time.toInt())
                 (cal.timeInMillis - today) / (1000 * 60 * 60 * 24)
-            } else { time }
+            } else {
+                time
+            }
             return timeUnitFromString(unit)?.let { ConsentExpiry(count, it) }
         }
 
         private fun timeUnitFromString(unit: String): TimeUnit? {
-            return when(unit) {
+            return when (unit) {
                 "minutes" -> TimeUnit.MINUTES
                 "hours" -> TimeUnit.HOURS
                 "days" -> TimeUnit.DAYS
