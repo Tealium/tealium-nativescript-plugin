@@ -17,7 +17,7 @@ ObjC-compatible wrapper for the Tealium Swift library to be used with the Tealiu
 
   s.homepage         = 'https://github.com/craigrouse/TealiumNativescriptWrapper'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'craigrouse' => 'craig.rouse@gmail.com' }
+  s.authors          = { "Tealium" => "mobile-team@tealium.com" }
   s.source           = { :git => 'https://github.com/Tealium/tealium-nativescript-plugin.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
