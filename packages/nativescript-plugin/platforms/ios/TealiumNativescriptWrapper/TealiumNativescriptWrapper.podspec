@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TealiumNativescriptWrapper'
-  s.version          = '1.1.3'
+  s.version          = '1.1.4'
   s.summary          = 'ObjC-compatible wrapper for the Tealium Swift library.'
 
   s.description      = <<-DESC
