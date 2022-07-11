@@ -1,6 +1,7 @@
 import { DemoSharedBase } from '../utils';
 import { Tealium } from '@tealium/nativescript-plugin';
 import { TealiumConfig, TealiumView, TealiumEvent, ConsentCategories, Dispatchers, Collectors, ConsentPolicy, Expiry, ConsentStatus, ConsentExpiry, TealiumEnvironment, TimeUnit } from '@tealium/nativescript-plugin/common';
+import { isAndroid } from '@nativescript/core';
 
 export class DemoSharedTealium extends DemoSharedBase {
 	init() {
@@ -80,6 +81,16 @@ export class DemoSharedTealium extends DemoSharedBase {
 
 	getData() {
 		console.log(Tealium.getData('plugin_name'));
+	}
+
+	gatherTrackData() {
+		if (isAndroid) {
+			console.log(Tealium.gatherTrackData());
+		} else {
+			Tealium.gatherTrackData((response: Map<string, any>): void => {
+				console.log(response);
+			});
+		}
 	}
 
 	getConsentStatus() {

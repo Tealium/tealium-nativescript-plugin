@@ -113,6 +113,14 @@ import TealiumSwift
         if let overrideCollectBatchURL = config["overrideCollectBatchURL"] as? String {
             localConfig.overrideCollectBatchURL = overrideCollectBatchURL
         }
+
+        if let overrideCollectDomain = config["overrideCollectDomain"] as? String {
+            localConfig.overrideCollectDomain = overrideCollectDomain
+        }
+
+        if let overrideCollectProfile = config["overrideCollectProfile"] as? String {
+            localConfig.overrideCollectProfile = overrideCollectProfile
+        }
         
         //         not yet supported in Swift
 //        if let overrideLibrarySettingsURL = config["overrideLibrarySettingsURL"] as? String {
@@ -122,6 +130,8 @@ import TealiumSwift
         if let visitorServiceRefreshInterval = Int((config["visitorServiceRefreshInterval"] as? String ?? "5")) {
             localConfig.visitorServiceRefresh = .every(visitorServiceRefreshInterval, .minutes)
         }
+
+        localConfig.sessionCountingEnabled = config["sessionCountingEnabled"] as? Bool ?? false
         
         localConfig.qrTraceEnabled = config["qrTraceEnabled"] as? Bool ?? true
         
@@ -252,7 +262,16 @@ import TealiumSwift
     
     @objc public static func getDataFromDataLayer(key: String) -> Any? {
         return tealium?.dataLayer.all[key]
-    }
+    } 
+
+    @objc public static func gatherTrackData(_ completion: @escaping (Any) -> Void) {
+        tealium?.gatherTrackData(completion: { response in
+            guard let result = response as Any? else {
+                return
+            }
+            completion([result])
+        })
+    } 
     
     @objc public static func addRemoteCommand(id: String,
                                               _ completion: @escaping (String) -> Void) {

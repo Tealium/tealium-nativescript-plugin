@@ -79,6 +79,12 @@ export declare class Tealium extends TealiumCommon {
 	public static removeData(keys: string[]) {}
 
 	/**
+	 * Retrieves track data from the data layer and collectors
+	 * @param callback Callback function to be called for iOS results
+	 */
+	public static gatherTrackData(callback?: (result: any) => void) {}
+
+	/**
 	 *
 	 * @param key The key of the data to retrieve from the data layer
 	 */

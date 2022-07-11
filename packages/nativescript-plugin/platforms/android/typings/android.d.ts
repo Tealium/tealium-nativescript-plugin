@@ -51,6 +51,7 @@ declare module com {
 					public getConsentStatus(): string;
 					public getConsentCategories(): native.Array<string>;
 					public fetchData(param0: string): any;
+					public gatherTrackData(): java.util.Map<string, any>;
 					public setConsentStatus(param0: string): void;
 					public track(param0: string): void;
 					public removeRemoteCommand(param0: string): void;
